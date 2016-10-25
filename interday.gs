@@ -68,6 +68,7 @@ function getFitbitService() {
     // Set the property store where authorized tokens should be persisted.
     .setPropertyStore(PropertiesService.getUserProperties())
     .setScope('activity nutrition sleep weight profile settings')
+    .setProjectKey(ScriptApp.getProjectKey())  //To alleviate OAuth2 issues, now running with v.19
     // but not desirable in a production application.
     //.setParam('approval_prompt', 'force')
     .setTokenHeaders({
